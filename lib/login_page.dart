@@ -71,32 +71,37 @@ class _LoginPageState extends State<LoginPage> {
       body: Container(
         width: double.infinity,
         child: SafeArea(
-          child: Column(
-            children: <Widget>[
-              _formField(),
-              Row(
+          child: Center(
+            child: SingleChildScrollView(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  RaisedButton(
-                      child: Icon(FontAwesomeIcons.google, color: Colors.white),
-                      color: Color(0xFFdd4b39),
-                      onPressed: null
-                  ),
-                  SizedBox(width: 5.0,),
-                  RaisedButton(
-                      child: Icon(FontAwesomeIcons.twitter, color: Colors.white),
-                      color: Color(0xFF00aced),
-                      onPressed: null
-                  ),
-                  SizedBox(width: 5.0,),
-                  RaisedButton(
-                      child: Icon(FontAwesomeIcons.facebook, color: Colors.white,),
-                      color: Color(0xFF3b5998),
-                      onPressed: null
+                  _formField(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      RaisedButton(
+                          child: Icon(FontAwesomeIcons.google, color: Colors.white),
+                          color: Color(0xFFdd4b39),
+                          onPressed: null
+                      ),
+                      SizedBox(width: 5.0,),
+                      RaisedButton(
+                          child: Icon(FontAwesomeIcons.twitter, color: Colors.white),
+                          color: Color(0xFF00aced),
+                          onPressed: null
+                      ),
+                      SizedBox(width: 5.0,),
+                      RaisedButton(
+                          child: Icon(FontAwesomeIcons.facebook, color: Colors.white,),
+                          color: Color(0xFF3b5998),
+                          onPressed: null
+                      )
+                    ],
                   )
                 ],
-              )
-            ],
+              ),
+            ),
           ),
         ),
       ),
