@@ -28,16 +28,18 @@ class _HomePageState extends State<HomePage> {
         title: Text("Login Page Cavdy"),
       ),
       body: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text("Welcome", style: TextStyle(fontSize: 32.0),),
-            RaisedButton(
-              child: Text("Logout", style: TextStyle(color: Colors.white),),
-              onPressed: _signOut,
-              color: Colors.red,
-            )
-          ],
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text("Welcome", style: TextStyle(fontSize: 32.0),),
+              RaisedButton(
+                child: Text("Logout", style: TextStyle(color: Colors.white),),
+                onPressed: _signOut,
+                color: Colors.red,
+              )
+            ],
+          ),
         ),
       ),
     );

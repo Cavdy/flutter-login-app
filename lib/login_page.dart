@@ -161,8 +161,8 @@ class _LoginPageState extends State<LoginPage> {
                   decoration: InputDecoration(labelText: "Email Address", labelStyle: TextStyle(color: Colors.blue,)),
                   keyboardType: TextInputType.emailAddress,
                   maxLines: 1,
-                  validator: null,
-                  onSaved: null,
+                  validator: (value) => value.isEmpty ? "Email Address can't empty" : null,
+                  onSaved: (value) => _email = value,
                 ),
               ),
               ListTile(
@@ -173,8 +173,8 @@ class _LoginPageState extends State<LoginPage> {
                   maxLines: 1,
                   maxLength: 10,
                   obscureText: true,
-                  validator: null,
-                  onSaved: null,
+                  validator: (value) => value.isEmpty ? "Password can't be empty" : null,
+                  onSaved: (value) => _password = value,
                 ),
               ),
               RaisedButton(
