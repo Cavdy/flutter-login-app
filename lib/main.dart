@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:loginapp/root_page.dart';
 import 'package:loginapp/authentication.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Flutter Demo',
-      home: new RootPage(auth: Auth(),),
+      home: RootPage(auth: Auth(),),
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:loginapp/authentication.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({this.auth, this.onSignedIn});
@@ -65,6 +66,17 @@ class _LoginPageState extends State<LoginPage> {
     });
   }
 
+  void _signInWithGoogle() async {
+    try {
+      FirebaseUser userId = await widget.auth
+          .googleSignedIn();
+      print("Signed In ${userId.displayName}");
+      widget.onSignedIn();
+    } catch (e) {
+      print(e);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,7 +95,7 @@ class _LoginPageState extends State<LoginPage> {
                       RaisedButton(
                           child: Icon(FontAwesomeIcons.google, color: Colors.white),
                           color: Color(0xFFdd4b39),
-                          onPressed: null
+                          onPressed: _signInWithGoogle
                       ),
                       SizedBox(width: 5.0,),
                       RaisedButton(
