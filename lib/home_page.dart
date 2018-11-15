@@ -12,6 +12,21 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
+  String uid = '';
+
+  getUid() {}
+
+  @override
+  void initState() {
+    this.uid = "";
+    widget.auth.currentUser().then((val) {
+      setState(() {
+        this.uid = val;
+      });
+    });
+    super.initState();
+  }
+
   void _signOut() async {
     try {
       await widget.auth.signOut();
@@ -31,8 +46,9 @@ class _HomePageState extends State<HomePage> {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Text("Welcome", style: TextStyle(fontSize: 32.0),),
+              Text("Welcome \n$uid", style: TextStyle(fontSize: 18.0),),
               RaisedButton(
                 child: Text("Logout", style: TextStyle(color: Colors.white),),
                 onPressed: _signOut,
