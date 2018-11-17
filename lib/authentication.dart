@@ -35,6 +35,7 @@ class Auth implements BaseAuth {
     return [
       firebaseAuth.signOut(),
       googleSignIn.signOut(),
+      facebookLogin.logOut()
     ];
   }
 
