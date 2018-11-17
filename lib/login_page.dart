@@ -77,6 +77,17 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
+  void _facebookAuth() async {
+    try {
+      FirebaseUser fbUser = await widget.auth.facebookSignedIn();
+      print("Signed in as ${fbUser.displayName}");
+      widget.onSignedIn();
+    } catch (e) {
+      print(e);
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -107,7 +118,7 @@ class _LoginPageState extends State<LoginPage> {
                       RaisedButton(
                           child: Icon(FontAwesomeIcons.facebook, color: Colors.white,),
                           color: Color(0xFF3b5998),
-                          onPressed: null
+                          onPressed: _facebookAuth
                       )
                     ],
                   )

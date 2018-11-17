@@ -22,6 +22,7 @@ dependencies:
   firebase_auth:
   font_awesome_flutter:
   google_sign_in:
+  flutter_facebook_login:
 
 dev_dependencies:
   flutter_test:
