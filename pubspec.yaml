@@ -23,6 +23,7 @@ dependencies:
   font_awesome_flutter:
   google_sign_in:
   flutter_facebook_login:
+  flutter_twitter_login:
 
 dev_dependencies:
   flutter_test:

@@ -87,6 +87,16 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
+  void _twitterLogin() async {
+    try {
+      FirebaseUser twUser = await widget.auth.twitterSignedIn();
+      print("Signed in as ${twUser.displayName}");
+      widget.onSignedIn();
+    } catch (e) {
+      print(e);
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -112,7 +122,7 @@ class _LoginPageState extends State<LoginPage> {
                       RaisedButton(
                           child: Icon(FontAwesomeIcons.twitter, color: Colors.white),
                           color: Color(0xFF00aced),
-                          onPressed: null
+                          onPressed: _twitterLogin
                       ),
                       SizedBox(width: 5.0,),
                       RaisedButton(
