@@ -1,8 +1,8 @@
 # loginapp
 
-A new Flutter project.
+A Flutter project on firebase sign in authentication.
 
 ## Getting Started
 
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
+In this app we created a flutter login app that uses firebase authentication, we implemented different methods and also checks if the user is logged in to auto take the user to homepage even if the user closed the app and opened it. Read the tutorial
+[LoginApp Tutorial](https://www.cavdy.com/flutter/flutter-tutorial-flutter-firebase-login-part-4/).
